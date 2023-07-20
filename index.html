@@ -1,0 +1,46 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <div class="left-section">
+        <div class="customer-info-box">
+            <h2>Customer Information</h2>
+            <label for="customerName">Customer Name:</label>
+            <input type="text" id="customer-name" name="customerName" required><br><br>
+            <label for="cloudPreference">Cloud Preference:</label>
+            <select id="cloud-option"  name="cloudPreference">
+                <!-- <option value="none"selected disabled hidden>Select an Option</option> -->
+                <option selected value="AWS">AWS</option>
+                <option value="Azure">Azure</option>
+            </select>
+        </div>
+        <div class="button-container">
+            <button id="download-button">Download</button>
+            <button id="select-button">Select and upload files</button>
+            <input type="file" id="file-input" multiple style="display: none;" />
+            <button id="list-button">List files</button>
+            <button id="delete-button">Delete selected files</button>
+            <button id="delete-container-button">Delete container</button>
+        </div>
+    </div>
+    <div class="right-section">
+        <div class="status-files">
+            <p><b>Status:</b></p>
+            <p id="status" style="height:160px; width: 593px; overflow: scroll;" />
+        </div>
+        <div class="status-files">
+            <p><b>Files:</b></p>
+            <select id="file-list" multiple style="height:222px; width: 593px; overflow: scroll;" />
+        </div>
+    </div>
+</body>
+
+<script type="module" src="./index.js"></script>
+
+</html>
