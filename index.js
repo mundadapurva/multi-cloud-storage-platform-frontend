@@ -63,7 +63,7 @@ function upload(){
         console.log(fileInput.files[0])
         console.log(data);
         Status.style.display = "block";
-        Status.innerHTML += "File uploaded successfully\n";
+        Status.innerHTML += "File uploaded successfully<br>";
     });
 }
 
@@ -106,7 +106,7 @@ function download(){
 
         console.log(url);
         Status.style.display = "block";
-        Status.innerHTML += "File downloaded successfully\n";
+        Status.innerHTML += "File downloaded successfully<br>";
     });
 }
 
@@ -119,13 +119,16 @@ function deleteFile(){
         headers : {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
-        }
+        },
+        body: JSON.stringify({
+            "created_by": consumerName.value
+        })
     })
     .then(res => res.json())
     .then(data => {
         console.log(data);
         Status.style.display = "block";
-        Status.innerHTML += "File deleted successfully\n";
+        Status.innerHTML += "File deleted successfully<br>";
     })
 }
 
